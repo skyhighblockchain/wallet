@@ -1,0 +1,22 @@
+@import "../../assets/scss/vars";
+
+.view-home {
+    position: relative;
+    //padding-top: $f-header-height;
+    background: linear-gradient(to right,#000336, #113083);
+
+
+    .main {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+
+@include media-max($bp-small) {
+    .view-home {
+        &::before {
+            height: 350px;
+        }
+    }
+}

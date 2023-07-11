@@ -1,0 +1,37 @@
+@import "custom-properties";
+@import "../../assets/scss/vars";
+
+.f-social-media-links {
+    color: var(--f-social-media-link-color);
+
+    li {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:not(:last-child) {
+            padding-inline-end: 24px;
+        }
+
+        @include links() {
+            color: #000;
+            transition: color $transition-length ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        a:not(.btn):hover {
+            background-color: var(--f-social-media-link-hover-color);
+            color: #fff;
+        }
+    }
+
+    .linkedin {
+        position: relative;
+        top: -3px;
+    }
+}

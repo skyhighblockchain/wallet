@@ -1,0 +1,80 @@
+@import '../variables';
+@import 'custom-properties';
+
+.f-simple-navigation {
+    display: inline-block;
+
+    ul {
+        //text-align: end;
+
+        li {
+            margin-inline-start: 4px;
+
+            @include links() {
+                display: flex;
+                align-items: center;
+                color: var(--f-simple-navigation-link-color);
+                font-weight: bold;
+                letter-spacing: normal;
+                display: inline-block;
+                padding: var(--f-simple-navigation-link-padding);
+                text-decoration: none;
+                transition: all $transition-length ease;
+                // border-radius: $border-radius;
+                padding: 30px 0;
+
+                &:not(.disabled) {
+                    &.router-link-active,
+                    &:hover {
+                        color: var(--f-simple-navigation-link-hover-color);
+                        background-color: $primary-color;
+                        text-decoration: none;
+                    }
+                }
+
+                &.disabled {
+                    cursor: initial;
+                    opacity: 0.5;
+                }
+                i {
+                    font-size: 32px;
+                }
+                .title {
+                    padding-top: 0 !important;
+                }
+            }
+        }
+    }
+
+    &--vertical {
+        display: block;
+        --f-simple-navigation-link-padding: 6px;
+
+        ul {
+            li {
+                display: block;
+
+                svg {
+                    margin-inline-end: 8px;
+                }
+            }
+        }
+    }
+}
+
+@include media-max($bp-menu) {
+    .f-simple-navigation {
+        ul {
+            li {
+                --f-simple-navigation-link-padding: 16px 20px;
+                width: 100%;
+                a{
+                    width: 100%;
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
